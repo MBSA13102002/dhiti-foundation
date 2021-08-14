@@ -55,7 +55,6 @@ def aryomtech (variable_1,variable_2):
 @app.route('/charge', methods=['POST'])
 def app_charge():
     amount = request.form.get("amount")*100
-    print(amount)
     payment_id = request.form['razorpay_payment_id']
     razorpay_client.payment.capture(payment_id, amount)
 
